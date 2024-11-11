@@ -1,0 +1,66 @@
+.main {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    background-color: #e4e4e4; /* Color claro por defecto */
+    min-height: 100vh;
+    --dm-bg: #111; /* Color de fondo oscuro */
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transición suave */
+}
+
+.main.dark {
+    background-color: var(--dm-bg); /* Cambiar el color de fondo en modo oscuro */
+    color: white; /* Color de texto en modo oscuro */
+}
+
+.container h1 {
+    font-size: 2.5em;
+    color: #4a90e2; /* Color en modo claro */
+    text-align: center;
+    margin: 20px 0;
+}
+
+.main.dark .container h1 {
+    color: #81c6ff; /* Color en modo oscuro para h1 */
+}
+
+.container h2 {
+    font-size: 2em;
+    color: #333; /* Color en modo claro */
+    margin-top: 30px;
+}
+
+.main.dark .container h2 {
+    color: #f0f0f0; /* Color en modo oscuro para h2 (ajustado para mejor visibilidad) */
+}
+
+.container p {
+    font-size: 1.2em;
+    color: #666; /* Color en modo claro */
+    line-height: 1.5;
+    margin: 10px 20px;
+}
+
+.main.dark .container p {
+    color: #bbb; /* Color en modo oscuro para p */
+}
+
+/* Estilos para la lista de características */
+.container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.container ul li {
+    background: #f4f4f4; /* Color claro para el fondo de los ítems */
+    border-radius: 5px;
+    margin: 5px 0;
+    padding: 10px;
+    font-size: 1.1em;
+}
+
+.main.dark .container ul li {
+    background: #333; /* Color de fondo en modo oscuro para los ítems */
+    color: white; /* Color de texto en modo oscuro para los ítems */
+}

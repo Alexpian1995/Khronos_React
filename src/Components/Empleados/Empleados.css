@@ -1,0 +1,118 @@
+/* Estilo general de la tabla */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+/* Estilo de las cabeceras de la tabla */
+.table thead tr {
+    background-color: #4CAF50; /* Color de fondo verde para el encabezado */
+    color: white; /* Color del texto del encabezado */
+}
+
+/* Estilo de las celdas de la tabla */
+.table th, .table td {
+    padding: 12px; /* Espaciado interno */
+    text-align: left; /* Alinear texto a la izquierda */
+    border-bottom: 1px solid #ddd; /* Línea de separación entre filas */
+}
+
+/* Estilo para filas alternas */
+.table tbody tr:nth-child(even) {
+    background-color: #f2f2f2; /* Color de fondo gris claro para filas pares */
+}
+
+.table tbody tr:nth-child(odd) {
+    background-color: #e4e4e4; /* Color de fondo gris claro para filas impares */
+}
+
+/* Efecto hover para las filas */
+.table tbody tr:hover {
+    background-color: #ddd; /* Color de fondo gris al pasar el mouse */
+}
+
+/* Estilos específicos para el modo oscuro */
+.main.dark .table thead tr {
+    background-color: #333; /* Fondo oscuro para el encabezado en modo oscuro */
+    color: white; /* Texto blanco en el encabezado */
+}
+
+.main.dark .table tbody tr:nth-child(even) {
+    background-color: #444; /* Fondo más oscuro para filas pares en modo oscuro */
+}
+
+.main.dark .table tbody tr:nth-child(odd) {
+    background-color: #555; /* Fondo más oscuro para filas impares en modo oscuro */
+    color: white; /* Texto blanco para filas impares en modo oscuro */
+}
+
+/* Estilo de los inputs dentro de la tabla */
+.table .input {
+    padding: 6px; /* Espaciado interno */
+    border: 1px solid #ccc; /* Borde gris claro */
+    border-radius: 4px; /* Bordes redondeados */
+    width: 100%; /* Ancho completo */
+}
+
+/* Ajustar color de texto en modo oscuro */
+.main.dark .table th,
+.main.dark .table td {
+    color: white; /* Color del texto blanco en modo oscuro */
+}
+/* Estilos para los botones de acción */
+.edit-button {
+    background-color: #4CAF50; /* Color verde para editar */
+    color: white; /* Color del texto */
+    padding: 8px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave */
+    margin-right: 5px; /* Margen derecho para separación */
+}
+
+.edit-button:hover {
+    background-color: #45a049; /* Color más oscuro al pasar el mouse */
+}
+
+.delete-button {
+    background-color: #f44336; /* Color rojo para eliminar */
+    color: white; /* Color del texto */
+    padding: 8px; /* Espaciado interno */
+    border: none; /* Sin borde */
+    border-radius: 4px; /* Bordes redondeados */
+    cursor: pointer; /* Cambia el cursor al pasar sobre el botón */
+    transition: background-color 0.3s; /* Transición suave */
+}
+
+.delete-button:hover {
+    background-color: #e53935; /* Color más oscuro al pasar el mouse */
+}
+
+/* Estilos específicos para el modo oscuro */
+.main.dark .edit-button {
+    background-color: #66bb6a; /* Color verde más claro en modo oscuro */
+}
+
+.main.dark .edit-button:hover {
+    background-color: #57a957; /* Color más oscuro en modo oscuro al pasar el mouse */
+}
+
+.main.dark .delete-button {
+    background-color: #ef5350; /* Color rojo más claro en modo oscuro */
+}
+
+.main.dark .delete-button:hover {
+    background-color: #e53935; /* Color más oscuro en modo oscuro al pasar el mouse */
+}
+/* Estilo de los botones de acción dentro de la tabla */
+.table .action-buttons {
+    display: flex; /* Utiliza Flexbox para alinear los botones */
+    gap: 10px; /* Espacio entre los botones */
+}
+
+/* Ajustes adicionales si es necesario */
+.table .action-buttons button {
+    flex: 1; /* Opcional: para que los botones ocupen espacio igual */
+}
