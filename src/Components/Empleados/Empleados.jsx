@@ -114,10 +114,10 @@ const Empleados = () => {
                 </td>
                 <td>
                   {editingEmployeeId === employee.id ? (
-                    <>
+                    <div class="edit">
                       <button onClick={handleSaveEdit} className="button">Guardar</button>
                       <button onClick={() => setEditingEmployeeId(null)} className="button">Cancelar</button>
-                    </>
+                    </div>
                   ) : (
                     <>
                       <button onClick={() => handleEditEmployee(employee)} className="edit-button">Editar</button>

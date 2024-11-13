@@ -10,6 +10,7 @@ function FormEmpleado({ setEmployees }) {
   const { DarkTheme } = useContext(ThemeContext);
   const [name, setName] = useState('');
   const [documento, setDocumento] = useState('');
+  const [successMessage, setSuccessMessage] = useState(''); // Nuevo estado para el mensaje de éxito
 
   const handleAddEmployee = async () => {
     if (name && documento) {
@@ -30,6 +31,15 @@ function FormEmpleado({ setEmployees }) {
         // Limpiar campos del formulario
         setName('');
         setDocumento('');
+
+        // Mostrar mensaje de éxito
+        setSuccessMessage('Empleado creado correctamente');
+        
+        // Ocultar el mensaje después de unos segundos
+        setTimeout(() => {
+          setSuccessMessage('');
+        }, 3000);
+
       } catch (e) {
         console.error('Error al agregar el empleado:', e);
       }
@@ -59,6 +69,9 @@ function FormEmpleado({ setEmployees }) {
           onChange={(e) => setDocumento(e.target.value)}
         />
         <button className='button' onClick={handleAddEmployee}>Agregar Empleado</button>
+        
+        {/* Mostrar el mensaje de éxito si existe */}
+        {successMessage && <p className="success-message">{successMessage}</p>}
       </div>
     </div>
   );

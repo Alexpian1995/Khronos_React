@@ -63,8 +63,8 @@ const Analitica = () => {
           empleadosAusentesList.length,
           empleadosConHorasExtrasList.length,
         ],
-        backgroundColor: ['#42A5F5', '#FF7043', '#66BB6A'],
-        borderColor: ['#1E88E5', '#FF5722', '#43A047'],
+        backgroundColor: ['#810551', '#05454d)', '#333333'],
+        borderColor: ['#1E88E5', '#05454d', '#43A047'],
         borderWidth: 1
       }
     ]
@@ -80,7 +80,7 @@ const Analitica = () => {
           empleadosAusentesList.length,
           empleadosConHorasExtrasList.length,
         ],
-        backgroundColor: ['#42A5F5', '#FF7043', '#66BB6A']
+        backgroundColor: ['#810551', '#05454d', '#333333']
       }
     ]
   };

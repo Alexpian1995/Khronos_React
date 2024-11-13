@@ -116,3 +116,8 @@
 .table .action-buttons button {
     flex: 1; /* Opcional: para que los botones ocupen espacio igual */
 }
+.edit{
+   gap: 1px;
+    display: flex;
+    margin-right: 5px;
+}
