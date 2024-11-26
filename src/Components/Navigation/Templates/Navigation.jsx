@@ -7,7 +7,7 @@ import { MdAccessTimeFilled, MdAnalytics,  MdSwapHoriz } from "react-icons/md";
 import { FiChevronLeft } from "react-icons/fi";
 import { ThemeContext } from '../../../ThemeContext';
 import Nav from '../../NaviconTemplate/Nav'; 
-import logo from '../../../assets/Khronos.png'
+import logo from '../../../assets/log.jpeg'
 
 const Navigation = () => {
     const [nav, setNav] = useState(false);

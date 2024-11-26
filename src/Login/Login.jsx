@@ -1,8 +1,8 @@
 import './Login.css';
-import infinity from "../assets/Khronos.png"; 
+import infinity from "../assets/log.jpeg"; 
 import { useState, useEffect } from 'react';
 import { auth } from '../firebase'; 
-import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from 'firebase/auth';
 
 const Login = () => {
     const [NewUser, setNewUser] = useState(true); 
@@ -13,9 +13,7 @@ const Login = () => {
     const [errorMsg, setErrorMsg] = useState("");
     const [successMsg, setSuccessMsg] = useState(""); 
 
-    
     useEffect(() => {
-        
         setUsername("");
         setEmail("");
         setPassword("");
@@ -35,9 +33,10 @@ const Login = () => {
             createUserWithEmailAndPassword(auth, email, password)
                 .then(() => {
                     localStorage.setItem("username", username); 
-                    setSuccessMsg("Usuario registrado con éxito."); 
+                    setSuccessMsg("Usuario registrado con éxito.");
                     
-                    
+                    // Inicia el temporizador para cerrar sesión automáticamente después de 10 minutos (600,000 ms)
+                    startAutoLogout();
                 })
                 .catch((error) => {
                     if (error.code === 'auth/email-already-in-use') {
@@ -50,16 +49,31 @@ const Login = () => {
                     }
                 });
         } else {
-           
+            
             signInWithEmailAndPassword(auth, email, password)
                 .then(() => {
                     console.log("Sesión iniciada exitosamente");
+                    
+                    startAutoLogout();
                 })
                 .catch((error) => {
                     setError(true);
                     setErrorMsg(error.message); 
                 });
         }
+    };
+
+    const startAutoLogout = () => {
+        setTimeout(() => {
+            signOut(auth)
+                .then(() => {
+                    console.log("Sesión cerrada automáticamente por inactividad.");
+                    
+                })
+                .catch((error) => {
+                    console.error("Error al cerrar sesión automáticamente:", error);
+                });
+        }, 100000); 
     };
 
     return (
